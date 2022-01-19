@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Hand Gestures</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+  <div class="container">
+  
+    <center>
+      <h1 class="btn btn-info heading"><b>Hand Gestures</b>
+        <br>
+        <span>👍 |</span>
+        <span>👎 |</span>
+        <span>&#128076; |</span>
+        <span>&#9996; |</span>
+        <span>&#129304;</span>
+      </h1>
+
+      <br><br>
+
+      <p style="font-size: 22px; background-color: black;">Take a selfie of a hand gesture to know about its meaning
+      	<br>
+      <p style="font-size: 18px; background-color: blue;">The gestures on which the model is trained are - 
+      <span style="background-color: black;">👍 | 👎 | &#128076; | &#9996; | &#129304;</span>
+    </span></p>
+        
+        <br>
+      </p>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+	      <label style="color: coral; font-size: 25px;">Live Camera - </label>
+        <div id="camera"></div>
+        <br><br>
+        <button class="btn btn-success" onclick="take_snapshot()">Take Snapshot</button>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <h3 class="btn btn-warning">Prediction 1</h3>
+        <br>
+        <p class="emotion_name" id="result_emotion_name"><span id="update_emoji" class="emoji"></span></p>
+        <br>
+        <h3 class="btn btn-warning">Prediction 2</h3>
+        <br>
+        <p class="emotion_name" id="result_emotion_name2"><span id="update_emoji2" class="emoji"></span></p>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+	      <label style="color:coral; font-size: 25px;">Snapshot - </label>
+        <div id="result"></div>
+        <br><br>
+        <button class="btn btn-success" onclick="predict()">Predict Emotion</button>
+      </div>
+
+    </center>
+
+  </div>
+
+<script src="main.js"></script>
+
+  </body>
+</html>
